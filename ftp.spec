@@ -5,7 +5,7 @@ Summary(pl):	Standardowy klient ftp (file transfer protocol)
 Summary(tr):	Standart UN*X ftp istemcisi
 Name:		ftp
 Version:	0.16
-Release:	5
+Release:	6
 License:	BSD
 Group:		Applications/Networking
 Group(pl):	Aplikacje/Sieciowe
