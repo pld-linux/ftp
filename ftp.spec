@@ -1,11 +1,15 @@
 Summary:	The standard UNIX FTP (file transfer protocol) client
 Summary(de):	StandardmДъiger Unix-ftp-Client (file transfer protocol)
+Summary(es):	Cliente ftp padrСn Unix (protocolo de transmisiСn de archivo)
 Summary(fr):	Client ftp (file transfer protocol) standard d'Unix
 Summary(pl):	Standardowy klient ftp (file transfer protocol)
+Summary(pt_BR):	Cliente ftp padrЦo Unix (protocolo de transmissЦo de arquivo)
+Summary(ru):	Стандартный FTP (file transfer protocol) клиент Unix
 Summary(tr):	Standart UN*X ftp istemcisi
+Summary(uk):	Стандартний FTP (file transfer protocol) кл╕╓нт Unix
 Name:		ftp
 Version:	0.17
-Release:	13
+Release:	18
 License:	BSD
 Group:		Applications/Networking
 Source0:	ftp://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-%{name}-%{version}.tar.gz
@@ -29,6 +33,11 @@ bereitgestellt. Ftp ist das Standard-Internet-Dateitransfer-Protokoll,
 das sich sowohl fЭr Dateiarchive als auch fЭr Dateitransfers zwischen
 Individuen groъer Beliebtheit erfreut.
 
+%description -l es
+Este paquete provee el cliente ftp padrСn Unix para la lМnea de
+comando. ftp es el protocolo padrСn de transferencia de archivos en
+Internet, y es extremamente popular.
+
 %description -l fr
 Contient le client ftp en ligne de commande standard d'Unix. ftp est
 le protocole standard de transfert de fichiers sur l'Internet. Il est
@@ -42,11 +51,26 @@ ptotokoЁem do przesyЁania plikСw (File Transfer Protocol), bЙd╠cym
 jednym z czЙ╤ciej u©ywanych protokoЁСw do przesyЁania i archiwizacji
 plikСw miЙdzy komputerami w Internecie.
 
+%description -l pt_BR
+Este pacote provЙ o cliente ftp padrЦo Unix para a linha de comando. O
+ftp И o protocolo padrЦo de transferЙncia de arquivos na Internet, e И
+extremamente popular.
+
+%description -l ru
+Пакет ftp содержит стандартный FTP-клиент Unix, работающий из
+командной строки. FTP - это широко используемый протокол для передачи
+файлов в Интернете и для архивирования файлов.
+
 %description -l tr
 Bu pakette UN*X'in standart komut satЩrЩ ftp istemcisi bulunmaktadЩr.
 GerГi grafik arabirimlerin egemen olduПu bir ГaПda biraz demode gibi
 gЖzЭkebilir ancak anonim dosya arЧivleri ve kiЧiler arasЩ dosya
 iletimi iГin hala yaygЩn olarak kullanЩlmaktadЩr.
+
+%description -l uk
+Пакет ftp м╕стить стандартний FTP-кл╕╓нт Unix, який працю╓ з
+командного рядка. FTP - це широко використовуваний протокол для
+передач╕ файл╕в в ╤нтернет╕ та для арх╕вац╕╖ файл╕в.
 
 %package pftp
 Summary:	Passive mode FTP client
@@ -74,7 +98,7 @@ pasywnym.
 %build
 CFLAGS="%{rpmcflags}" \
 ./configure --with-c-compiler=%{__cc}
-%{__make}
+%{__make} LIBTERMCAP=-ltinfo
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -95,13 +119,16 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ftp
-%{_mandir}/man1/ftp*
-%lang(ja) %{_mandir}/ja/man1/ftp*
-%lang(pl) %{_mandir}/pl/man1/ftp*
+%{_mandir}/man1/ftp.1*
+%{_mandir}/man5/netrc.5*
+%lang(ja) %{_mandir}/ja/man1/ftp.1*
+%lang(pl) %{_mandir}/pl/man1/ftp.1*
+%lang(pt_BR) %{_mandir}/pt_BR/man1/ftp.1*
 
 %files pftp
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/pftp
 %{_mandir}/man1/pftp*
-%lang(ja) %{_mandir}/ja/man1/pftp*
-%lang(pl) %{_mandir}/pl/man1/pftp*
+%lang(ja) %{_mandir}/ja/man1/pftp.1*
+%lang(pl) %{_mandir}/pl/man1/pftp.1*
+%lang(pt_BR) %{_mandir}/pt_BR/man1/pftp.1*
