@@ -41,8 +41,8 @@ olarak kullanýlmaktadýr.
 %build
 make CFLAGS="$RPM_OPT_FLAGS -Wall -W -Wpointer-arith -Wbad-function-cast \
 	-Wcast-qual -Wstrict-prototypes -Wmissing-prototypes \
-	-Wmissing-declarations -Wnested-externs -Winline -Wcast-align" \
-	USE_READLINE=1
+	-Wmissing-declarations -Wnested-externs -Winline -Wcast-align \
+	-D__USE_READLINE__"
 
 %install
 rm -rf $RPM_BUILD_ROOT
