@@ -13,7 +13,7 @@ Source0:	ftp://sunsite.unc.edu/pub/Linux/system/network/file-transfer/netkit-%{n
 Source1:	ftp.1.pl
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	readline-devel >= 4.1
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The ftp package provides the standard UNIX command-line FTP client. FTP is
