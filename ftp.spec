@@ -1,10 +1,11 @@
 Summary:	The standard UNIX FTP (file transfer protocol) client
 Summary(de):	Standardmäßiger Unix-ftp-Client (file transfer protocol)
 Summary(fr):	Client ftp (file transfer protocol) standard d'Unix
+Summary(pl):	Standardowy klient ftp (file transfer protocol)
 Summary(tr):	Standart UN*X ftp istemcisi
 Name:		ftp
 Version:	0.16
-Release:	2
+Release:	3
 License:	BSD
 Group:		Applications/Networking
 Group(pl):	Aplikacje/Sieciowe
@@ -30,6 +31,13 @@ Contient le client ftp en ligne de commande standard d'Unix. ftp est le
 protocole standard de transfert de fichiers sur l'Internet. Il est très
 utilisé pour les archives et les transferts de fichiers entre individus.
 
+%description -l pl
+Pakiet ftp udostêpnia standardowego klienta FTP jaka jest obecna w
+ró¿nych typachg systemów UNIX obs³ugiwan z lini poleceñ. FTP jest ptotoko³em
+do przesy³ania plików (File Transfer Protocol), który jest jednym z czêsciej
+u¿ywanych protoko³ów do przesy³±nia i archiwizacji plików miêdzy w
+Internecie.
+ 
 %description -l tr
 Bu pakette UN*X'in standart komut satýrý ftp istemcisi bulunmaktadýr. Gerçi
 grafik arabirimlerin egemen olduðu bir çaðda biraz demode gibi gözükebilir
