@@ -9,7 +9,7 @@ Summary(tr):	Standart UN*X ftp istemcisi
 Summary(uk):	Стандартний FTP (file transfer protocol) кл╕╓нт Unix
 Name:		ftp
 Version:	0.17
-Release:	21
+Release:	22
 License:	BSD
 Group:		Applications/Networking
 Source0:	ftp://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-%{name}-%{version}.tar.gz
@@ -24,6 +24,7 @@ Patch2:		netkit-%{name}-usagi-ipv6.patch
 Patch3:		netkit-%{name}-input_line.patch
 BuildRequires:	readline-devel >= 4.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	inetutils-ftp
 Obsoletes:	lukemftp
 Obsoletes:	tnftp
 
