@@ -53,7 +53,7 @@ iletimi için hala yaygýn olarak kullanýlmaktadýr.
 %patch0 -p1
 
 %build
-CFLAGS="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}" \
+CFLAGS="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}" \
 ./configure --with-c-compiler=gcc
 %{__make}
 
