@@ -5,7 +5,7 @@ Summary(pl):	Standardowy klient ftp (file transfer protocol)
 Summary(tr):	Standart UN*X ftp istemcisi
 Name:		ftp
 Version:	0.17
-Release:	12
+Release:	13
 License:	BSD
 Group:		Applications/Networking
 Source0:	ftp://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-%{name}-%{version}.tar.gz
@@ -48,6 +48,22 @@ Gerçi grafik arabirimlerin egemen olduðu bir çaðda biraz demode gibi
 gözükebilir ancak anonim dosya arþivleri ve kiþiler arasý dosya
 iletimi için hala yaygýn olarak kullanýlmaktadýr.
 
+%package pftp
+Summary:	Passive mode FTP client
+Summary(pl):	Tryb pasywny klienta ftp
+Group:		Applications/Networking
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Requires:	%{name} >= 0.17-13
+Conflicts:	pftp
+
+%description pftp
+This package contains a symlink to the FTP client used to call the
+client in passive mode.
+
+%description pftp -l pl
+Pakiet ten zawiera dowi±zanie do klienta FTP, wywo³uj±ce go w trybie
+pasywnym.
+
 %prep
 %setup -q -n netkit-ftp-%{version}
 %patch0 -p1
@@ -79,7 +95,13 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ftp
+%{_mandir}/man1/ftp*
+%lang(ja) %{_mandir}/ja/man1/ftp*
+%lang(pl) %{_mandir}/pl/man1/ftp*
+
+%files pftp
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/pftp
-%{_mandir}/man1/*
-%lang(ja) %{_mandir}/ja/man1/*
-%lang(pl) %{_mandir}/pl/man1/*
+%{_mandir}/man1/pftp*
+%lang(ja) %{_mandir}/ja/man1/pftp*
+%lang(pl) %{_mandir}/pl/man1/pftp*
