@@ -6,7 +6,6 @@ Copyright:	BSD
 Group:		Applications/Internet
 Source0:	ftp://sunsite.unc.edu/pub/Linux/system/network/file-transfer/netkit-ftp-0.10.tar.gz
 Patch0:		netkit-ftp-0.10-misc.patch
-Requires:	inetd
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
