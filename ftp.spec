@@ -5,14 +5,14 @@ Summary(pl):	Standardowy klient ftp (file transfer protocol)
 Summary(tr):	Standart UN*X ftp istemcisi
 Name:		ftp
 Version:	0.16
-Release:	3
+Release:	4
 License:	BSD
 Group:		Applications/Networking
 Group(pl):	Aplikacje/Sieciowe
 Source0:	ftp://sunsite.unc.edu/pub/Linux/system/network/file-transfer/netkit-%{name}-%{version}.tar.gz
 Source1:	ftp.1.pl
 BuildRequires:	ncurses-devel >= 5.0
-BuildRequires:	readline-devel
+BuildRequires:	readline-devel >= 4.1
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
