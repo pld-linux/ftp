@@ -54,7 +54,7 @@ iletimi için hala yaygýn olarak kullanýlmaktadýr.
 %build
 CFLAGS="$RPM_OPT_FLAGS" \
 LDFLAGS="-s" \
-./configure
+./configure --with-c-compiler=gcc
 %{__make}
 
 %install
