@@ -24,6 +24,7 @@ Patch2:		netkit-%{name}-usagi-ipv6.patch
 Patch3:		netkit-%{name}-input_line.patch
 BuildRequires:	readline-devel >= 4.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	lukemftp
 Obsoletes:	tnftp
 
 %description
@@ -102,7 +103,7 @@ pasywnym.
 %build
 CFLAGS="%{rpmcflags}" \
 ./configure --with-c-compiler=%{__cc}
-%{__make} LIBTERMCAP=-ltinfo CFLAGS="%{optflags}"
+%{__make} LIBTERMCAP=-ltinfo CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -131,7 +132,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man5/netrc.5*
 %lang(ja) %{_mandir}/ja/man1/ftp.1*
 %lang(pl) %{_mandir}/pl/man1/ftp.1*
-#%lang(pt_BR) %{_mandir}/pt_BR/man1/ftp.1*
+%lang(pt_BR) %{_mandir}/pt_BR/man1/ftp.1*
 %{_applnkdir}/Network/FTP/*
 %{_pixmapsdir}/*
 
@@ -141,4 +142,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/pftp*
 %lang(ja) %{_mandir}/ja/man1/pftp.1*
 %lang(pl) %{_mandir}/pl/man1/pftp.1*
-#%lang(pt_BR) %{_mandir}/pt_BR/man1/pftp.1*
+%lang(pt_BR) %{_mandir}/pt_BR/man1/pftp.1*
