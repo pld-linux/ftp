@@ -1,0 +1,28 @@
+--- netkit-ftp-0.17/ftp/main.c~	Wed Nov 28 18:50:24 2001
++++ netkit-ftp-0.17/ftp/main.c	Wed Nov 28 18:53:14 2001
+@@ -324,16 +324,19 @@
+ 		l = strlen(line);
+ 		if (l == 0)
+ 			break;
+-		if (line[--l] == '\n') {
+-			if (l == 0)
+-				break;
+-			line[l] = '\0';
+-		} 
+-		else if (l == sizeof(line) - 2) {
++		if (l == sizeof(line) - 1) {
+ 			printf("sorry, input line too long\n");
++#ifdef __USE_READLINE__
++			if (!(fromatty && !rl_inhibit))
++#endif
+ 			while ((l = getchar()) != '\n' && l != EOF)
+ 				/* void */;
+ 			break;
++		}
++		if (line[--l] == '\n') {
++			if (l == 0)
++				break;
++			line[l] = '\0';
+ 		} /* else it was a line without a newline */
+ 		margv = makeargv(&margc, &marg);
+ 		if (margc == 0) {
