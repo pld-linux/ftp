@@ -13,7 +13,9 @@ Release:	20
 License:	BSD
 Group:		Applications/Networking
 Source0:	ftp://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-%{name}-%{version}.tar.gz
+# Source0-md5:	94441610c9b86ef45c4c6ec609444060
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
+# Source1-md5:	5f8919e12c6878fa538a339f3ff2095d
 Source2:	%{name}.desktop
 Source3:	%{name}.png
 Patch0:		netkit-%{name}-macro-quit.patch
