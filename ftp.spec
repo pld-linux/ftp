@@ -14,6 +14,8 @@ License:	BSD
 Group:		Applications/Networking
 Source0:	ftp://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-%{name}-%{version}.tar.gz
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
+Source2:	%{name}.desktop
+Source3:	%{name}.png
 Patch0:		netkit-%{name}-macro-quit.patch
 Patch1:		netkit-%{name}-acct.patch
 Patch2:		netkit-%{name}-usagi-ipv6.patch
@@ -102,11 +104,15 @@ CFLAGS="%{rpmcflags}" \
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1} \
+	$RPM_BUILD_ROOT{%{_pixmapsdir},%{_applnkdir}/Network/FTP}
 
 %{__make} install \
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}
+
+install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Network/FTP
+install %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
@@ -124,6 +130,8 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ja) %{_mandir}/ja/man1/ftp.1*
 %lang(pl) %{_mandir}/pl/man1/ftp.1*
 %lang(pt_BR) %{_mandir}/pt_BR/man1/ftp.1*
+%{_applnkdir}/Network/FTP/*
+%{_pixmapsdir}/*
 
 %files pftp
 %defattr(644,root,root,755)
