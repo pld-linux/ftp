@@ -5,7 +5,7 @@ Summary(pl):	Standardowy klient ftp (file transfer protocol)
 Summary(tr):	Standart UN*X ftp istemcisi
 Name:		ftp
 Version:	0.17
-Release:	8
+Release:	10
 License:	BSD
 Group:		Applications/Networking
 Group(de):	Applikationen/Netzwerkwesen
@@ -13,7 +13,8 @@ Group(pl):	Aplikacje/Sieciowe
 Source0:	ftp://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-%{name}-%{version}.tar.gz
 Source1:	%{name}.1.pl
 Patch0:		netkit-%{name}-macro-quit.patch
-BuildRequires:	ncurses-devel >= 5.2
+Patch1:		netkit-%{name}-acct.patch
+Patch2:		netkit-%{name}-usagi-ipv6.patch
 BuildRequires:	readline-devel >= 4.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	lukemftp
@@ -51,10 +52,12 @@ iletimi için hala yaygýn olarak kullanýlmaktadýr.
 %prep
 %setup -q -n netkit-ftp-%{version}
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 CFLAGS="%{rpmcflags}" \
-./configure --with-c-compiler=gcc
+./configure --with-c-compiler=%{__cc}
 %{__make}
 
 %install
