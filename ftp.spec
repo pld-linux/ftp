@@ -32,10 +32,10 @@ protocole standard de transfert de fichiers sur l'Internet. Il est très
 utilisé pour les archives et les transferts de fichiers entre individus.
 
 %description -l pl
-Pakiet ftp udostêpnia standardowego klienta FTP jaka jest obecna w
-ró¿nych typachg systemów UNIX obs³ugiwan z lini poleceñ. FTP jest ptotoko³em
-do przesy³ania plików (File Transfer Protocol), który jest jednym z czêsciej
-u¿ywanych protoko³ów do przesy³±nia i archiwizacji plików miêdzy w
+Pakiet ftp udostêpnia standardowego klienta FTP obs³ugiwanego z linii poleceñ
+jaki jest obecny w ró¿nych systemach uniksowych. FTP jest ptotoko³em
+do przesy³ania plików (File Transfer Protocol), bêd±cym jednym z czê¶ciej
+u¿ywanych protoko³ów do przesy³ania i archiwizacji plików miêdzy komputerami w
 Internecie.
  
 %description -l tr
