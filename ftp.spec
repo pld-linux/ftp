@@ -35,7 +35,7 @@ protocol for transferring files and for archiving files.
 
 %description -l de
 Dadurch wird der Standard-Unix-Befehlszeilen-FTP-Client
-bereitgestellt. Ftp ist das Standard-Internet-Dateitransfer-Protokoll,
+bereitgestellt. FTP ist das Standard-Internet-Dateitransfer-Protokoll,
 das sich sowohl für Dateiarchive als auch für Dateitransfers zwischen
 Individuen großer Beliebtheit erfreut.
 
