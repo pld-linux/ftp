@@ -1,0 +1,88 @@
+diff -ur netkit-ftp-0.17.orig/ftp/domacro.c netkit-ftp-0.17/ftp/domacro.c
+--- netkit-ftp-0.17.orig/ftp/domacro.c	Thu Aug 15 01:27:28 1996
++++ netkit-ftp-0.17/ftp/domacro.c	Tue Aug  8 15:38:49 2000
+@@ -137,6 +137,18 @@
+ 			if (c->c_handler_v) c->c_handler_v(margc, margv);
+ 			else if (c->c_handler_0) c->c_handler_0();
+ 			else c->c_handler_1(marg);
++			
++			if (quitflag) {
++				switch (code) {	
++					case   0: case   1: /* ommit "good" */
++					case 200: case 221: /*    codes     */
++					case 226: case 250: 
++						break;
++					default:
++						printf("%d Macro failed.\n", code);
++						quit();
++				}
++			}
+ 
+ 			if (bell && c->c_bell) {
+ 				(void) putchar('\007');
+diff -ur netkit-ftp-0.17.orig/ftp/ftp.1 netkit-ftp-0.17/ftp/ftp.1
+--- netkit-ftp-0.17.orig/ftp/ftp.1	Tue Dec 14 13:52:50 1999
++++ netkit-ftp-0.17/ftp/ftp.1	Tue Aug  8 14:19:00 2000
+@@ -42,10 +42,10 @@
+ file transfer program
+ .Sh SYNOPSIS
+ .Nm ftp
+-.Op Fl pinegvd
++.Op Fl pinegvdq
+ .Op Ar host
+ .Nm pftp
+-.Op Fl inegvd
++.Op Fl inegvdq
+ .Op Ar host
+ .Sh DESCRIPTION
+ .Nm Ftp
+@@ -97,6 +97,8 @@
+ as report on data transfer statistics.
+ .It Fl d
+ Enables debugging.
++.It Fl q
++Quit if some macro command failed.
+ .El
+ .Pp
+ The client host with which
+diff -ur netkit-ftp-0.17.orig/ftp/ftp_var.h netkit-ftp-0.17/ftp/ftp_var.h
+--- netkit-ftp-0.17.orig/ftp/ftp_var.h	Sat Oct  2 20:39:17 1999
++++ netkit-ftp-0.17/ftp/ftp_var.h	Tue Aug  8 14:14:48 2000
+@@ -74,6 +74,7 @@
+ Extern int	mcase;		/* map upper to lower case for mget names */
+ Extern int	ntflag;		/* use ntin ntout tables for name xlation */
+ Extern int	mapflag;	/* use mapin mapout templates on file names */
++Extern int	quitflag;	/* quit if macro command failed */
+ Extern int	code;		/* return/reply code for ftp command */
+ Extern int	crflag;		/* if 1, strip car. rets. on ascii gets */
+ Extern char     pasv[64];       /* passive port for proxy data connection */
+diff -ur netkit-ftp-0.17.orig/ftp/main.c netkit-ftp-0.17/ftp/main.c
+--- netkit-ftp-0.17.orig/ftp/main.c	Sat Oct  2 15:25:23 1999
++++ netkit-ftp-0.17/ftp/main.c	Tue Aug  8 14:29:49 2000
+@@ -95,6 +95,7 @@
+ 	printf("\t   -v: verbose mode\n");
+ 	printf("\t   -t: enable packet tracing [nonfunctional]\n");
+ 	printf("\t   -d: enable debugging\n");
++	printf("\t   -q: enable macro error quits\n");
+ 	printf("\n");
+ }
+ 
+@@ -119,6 +120,7 @@
+ 	interactive = 1;
+ 	autologin = 1;
+ 	passivemode = 0;
++	quitflag = 0;
+ 
+         cp = strrchr(argv[0], '/');
+         cp = (cp == NULL) ? argv[0] : cp+1;
+@@ -168,6 +170,10 @@
+ 				
+ 			case 'e':
+ 				rl_inhibit = 1;
++				break;
++			
++			case 'q':
++				quitflag = 1;
+ 				break;
+ 				
+ 			case 'h':
