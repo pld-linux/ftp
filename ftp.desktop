@@ -1,0 +1,18 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=ftp
+Comment=The standard UNIX FTP (file transfer protocol) client
+Comment[de]=Standardmäßiger Unix-ftp-Client (file transfer protocol)
+Comment[es]=Cliente ftp padrón Unix (protocolo de transmisión de archivo)
+Comment[fr]=Client ftp (file transfer protocol) standard d'Unix
+Comment[pl]=Standardowy klient ftp (file transfer protocol)
+Comment[pt_BR]=Cliente ftp padrão Unix (protocolo de transmissão de arquivo)
+Comment[ru]=Стандартный FTP (file transfer protocol) клиент Unix
+Comment[tr]=Standart UN*X ftp istemcisi
+Comment[uk]=Стандартний FTP (file transfer protocol) клієнт Unix                                                                   
+Exec=ftp
+Icon=ftp.png
+Terminal=true
+Type=Application
+Categories=ConsoleOnly;Network;FileTransfer;
+# vi: encoding=utf-8
