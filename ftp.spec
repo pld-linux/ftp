@@ -53,7 +53,7 @@ iletimi için hala yaygýn olarak kullanýlmaktadýr.
 CFLAGS="$RPM_OPT_FLAGS" \
 LDFLAGS="-s" \
 ./configure
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
