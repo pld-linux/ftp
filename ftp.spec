@@ -5,13 +5,14 @@ Summary(pl):	Standardowy klient ftp (file transfer protocol)
 Summary(tr):	Standart UN*X ftp istemcisi
 Name:		ftp
 Version:	0.17
-Release:	1
+Release:	7
 License:	BSD
 Group:		Applications/Networking
+Group(de):	Applikationen/Netzwerkwesen
 Group(pl):	Aplikacje/Sieciowe
 Source0:	ftp://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-%{name}-%{version}.tar.gz
-Source1:	ftp.1.pl
-Patch0:		netkit-ftp-macro-quit.patch
+Source1:	%{name}.1.pl
+Patch0:		netkit-%{name}-macro-quit.patch
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	readline-devel >= 4.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -52,14 +53,13 @@ iletimi için hala yaygýn olarak kullanýlmaktadýr.
 %patch0 -p1
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" \
-LDFLAGS="-s" \
+CFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O -g}" \
 ./configure --with-c-compiler=gcc
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/{man1,pl/man1}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1/{,pl}/man1}
 
 %{__make} install \
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
@@ -71,8 +71,6 @@ rm -f $RPM_BUILD_ROOT%{_mandir}/man1/pftp.1
 echo ".so ftp.1" > $RPM_BUILD_ROOT%{_mandir}/man1/pftp.1
 
 echo ".so ftp.1" > $RPM_BUILD_ROOT%{_mandir}/pl/man1/pftp.1
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/{man1/*,pl/man1/*}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
