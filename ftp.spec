@@ -59,7 +59,7 @@ CFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O -g}" \
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1/{,pl}/man1}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/{,pl}/man1}
 
 %{__make} install \
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
