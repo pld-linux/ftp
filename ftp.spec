@@ -9,7 +9,7 @@ Summary(tr):	Standart UN*X ftp istemcisi
 Summary(uk):	Стандартний FTP (file transfer protocol) кл╕╓нт Unix
 Name:		ftp
 Version:	0.17
-Release:	18
+Release:	19
 License:	BSD
 Group:		Applications/Networking
 Source0:	ftp://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-%{name}-%{version}.tar.gz
