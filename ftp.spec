@@ -52,7 +52,7 @@ individus.
 %description -l pl
 Pakiet ftp udostêpnia standardowego klienta FTP obs³ugiwanego z linii
 poleceñ jaki jest obecny w ró¿nych systemach uniksowych. FTP jest
-ptotoko³em do przesy³ania plików (File Transfer Protocol), bêd±cym
+protoko³em do przesy³ania plików (File Transfer Protocol), bêd±cym
 jednym z czê¶ciej u¿ywanych protoko³ów do przesy³ania i archiwizacji
 plików miêdzy komputerami w Internecie.
 
