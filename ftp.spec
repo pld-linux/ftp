@@ -5,7 +5,7 @@ Summary(pl):	Standardowy klient ftp (file transfer protocol)
 Summary(tr):	Standart UN*X ftp istemcisi
 Name:		ftp
 Version:	0.16
-Release:	4
+Release:	5
 License:	BSD
 Group:		Applications/Networking
 Group(pl):	Aplikacje/Sieciowe
@@ -14,6 +14,7 @@ Source1:	ftp.1.pl
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	readline-devel >= 4.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	lukemftp
 
 %description
 The ftp package provides the standard UNIX command-line FTP client. FTP is
@@ -32,12 +33,12 @@ protocole standard de transfert de fichiers sur l'Internet. Il est très
 utilisé pour les archives et les transferts de fichiers entre individus.
 
 %description -l pl
-Pakiet ftp udostêpnia standardowego klienta FTP obs³ugiwanego z linii poleceñ
-jaki jest obecny w ró¿nych systemach uniksowych. FTP jest ptotoko³em
-do przesy³ania plików (File Transfer Protocol), bêd±cym jednym z czê¶ciej
-u¿ywanych protoko³ów do przesy³ania i archiwizacji plików miêdzy komputerami w
-Internecie.
- 
+Pakiet ftp udostêpnia standardowego klienta FTP obs³ugiwanego z linii
+poleceñ jaki jest obecny w ró¿nych systemach uniksowych. FTP jest
+ptotoko³em do przesy³ania plików (File Transfer Protocol), bêd±cym jednym z
+czê¶ciej u¿ywanych protoko³ów do przesy³ania i archiwizacji plików miêdzy
+komputerami w Internecie.
+
 %description -l tr
 Bu pakette UN*X'in standart komut satýrý ftp istemcisi bulunmaktadýr. Gerçi
 grafik arabirimlerin egemen olduðu bir çaðda biraz demode gibi gözükebilir
