@@ -5,13 +5,13 @@ Summary(pl):	Standardowy klient ftp (file transfer protocol)
 Summary(tr):	Standart UN*X ftp istemcisi
 Name:		ftp
 Version:	0.17
-Release:	10
+Release:	11
 License:	BSD
 Group:		Applications/Networking
 Group(de):	Applikationen/Netzwerkwesen
 Group(pl):	Aplikacje/Sieciowe
 Source0:	ftp://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-%{name}-%{version}.tar.gz
-Source1:	%{name}.1.pl
+Source1:	%{name}-non-english-man-pages.tar.bz2
 Patch0:		netkit-%{name}-macro-quit.patch
 Patch1:		netkit-%{name}-acct.patch
 Patch2:		netkit-%{name}-usagi-ipv6.patch
@@ -62,18 +62,16 @@ CFLAGS="%{rpmcflags}" \
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/{,pl}/man1}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 %{__make} install \
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/ftp.1
+bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
 rm -f $RPM_BUILD_ROOT%{_mandir}/man1/pftp.1
 echo ".so ftp.1" > $RPM_BUILD_ROOT%{_mandir}/man1/pftp.1
-
-echo ".so ftp.1" > $RPM_BUILD_ROOT%{_mandir}/pl/man1/pftp.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -83,4 +81,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/ftp
 %attr(755,root,root) %{_bindir}/pftp
 %{_mandir}/man1/*
+%lang(ja) %{_mandir}/ja/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
