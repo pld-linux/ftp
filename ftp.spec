@@ -1,10 +1,10 @@
-Summary:	The standard UNIX FTP (file transfer protocol) client.
-Summary(de):	Standardmäßiger Unix-ftp-Client (file transfer protocol) 
+Summary:	The standard UNIX FTP (file transfer protocol) client
+Summary(de):	Standardmäßiger Unix-ftp-Client (file transfer protocol)
 Summary(fr):	Client ftp (file transfer protocol) standard d'Unix
 Summary(tr):	Standart UN*X ftp istemcisi
 Name:		ftp
 Version:	0.16
-Release:	1
+Release:	2
 License:	BSD
 Group:		Applications/Networking
 Group(pl):	Aplikacje/Sieciowe
@@ -17,13 +17,13 @@ BuildRoot:	/tmp/%{name}-%{version}-root
 %description
 The ftp package provides the standard UNIX command-line FTP client. FTP is
 the file transfer protocol, which is a widely used Internet protocol for
-transferring files and for archiving files.   
+transferring files and for archiving files.
 
 %description -l de
 Dadurch wird der Standard-Unix-Befehlszeilen-FTP-Client bereitgestellt. Ftp
 ist das Standard-Internet-Dateitransfer-Protokoll, das sich sowohl für
 Dateiarchive als auch für Dateitransfers zwischen Individuen großer
-Beliebtheit erfreut.   
+Beliebtheit erfreut.
 
 %description -l fr
 Contient le client ftp en ligne de commande standard d'Unix. ftp est le
@@ -43,7 +43,7 @@ yaygýn olarak kullanýlmaktadýr.
 CFLAGS="$RPM_OPT_FLAGS" \
 LDFLAGS="-s" \
 ./configure
-make 
+make
 
 %install
 rm -rf $RPM_BUILD_ROOT
