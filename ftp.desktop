@@ -13,4 +13,5 @@ Exec=ftp
 Icon=ftp.png
 Terminal=1
 Type=Application
+Categories=Network
 # vi: encoding=utf-8
