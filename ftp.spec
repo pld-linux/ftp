@@ -1,11 +1,11 @@
 Summary:	The standard UNIX FTP (file transfer protocol) client
-Summary(de):	Standardmäßiger Unix-ftp-Client (file transfer protocol)
-Summary(es):	Cliente ftp padrón Unix (protocolo de transmisión de archivo)
-Summary(fr):	Client ftp (file transfer protocol) standard d'Unix
-Summary(pl):	Standardowy klient ftp (file transfer protocol)
-Summary(pt_BR):	Cliente ftp padrão Unix (protocolo de transmissão de arquivo)
+Summary(de):	Standardmäßiger Unix-FTP-Client (file transfer protocol)
+Summary(es):	Cliente FTP padrón Unix (protocolo de transmisión de archivo)
+Summary(fr):	Client FTP (file transfer protocol) standard d'Unix
+Summary(pl):	Standardowy klient FTP (file transfer protocol)
+Summary(pt_BR):	Cliente FTP padrão Unix (protocolo de transmissão de arquivo)
 Summary(ru):	óÔÁÎÄÁÒÔÎÙÊ FTP (file transfer protocol) ËÌÉÅÎÔ Unix
-Summary(tr):	Standart UN*X ftp istemcisi
+Summary(tr):	Standart UN*X FTP istemcisi
 Summary(uk):	óÔÁÎÄÁÒÔÎÉÊ FTP (file transfer protocol) ËÌ¦¤ÎÔ Unix
 Name:		ftp
 Version:	0.17
@@ -29,7 +29,7 @@ Obsoletes:	lukemftp
 Obsoletes:	tnftp
 
 %description
-The ftp package provides the standard UNIX command-line FTP client.
+The FTP package provides the standard UNIX command-line FTP client.
 FTP is the file transfer protocol, which is a widely used Internet
 protocol for transferring files and for archiving files.
 
@@ -40,47 +40,48 @@ das sich sowohl für Dateiarchive als auch für Dateitransfers zwischen
 Individuen großer Beliebtheit erfreut.
 
 %description -l es
-Este paquete provee el cliente ftp padrón Unix para la línea de
-comando. ftp es el protocolo padrón de transferencia de archivos en
+Este paquete provee el cliente FTP padrón Unix para la línea de
+comando. FTP es el protocolo padrón de transferencia de archivos en
 Internet, y es extremamente popular.
 
 %description -l fr
-Contient le client ftp en ligne de commande standard d'Unix. ftp est
+Contient le client FTP en ligne de commande standard d'Unix.  est
+FTP
 le protocole standard de transfert de fichiers sur l'Internet. Il est
 très utilisé pour les archives et les transferts de fichiers entre
 individus.
 
 %description -l pl
-Pakiet ftp udostêpnia standardowego klienta FTP obs³ugiwanego z linii
+Pakiet FTP udostêpnia standardowego klienta FTP obs³ugiwanego z linii
 poleceñ jaki jest obecny w ró¿nych systemach uniksowych. FTP jest
 protoko³em do przesy³ania plików (File Transfer Protocol), bêd±cym
 jednym z czê¶ciej u¿ywanych protoko³ów do przesy³ania i archiwizacji
 plików miêdzy komputerami w Internecie.
 
 %description -l pt_BR
-Este pacote provê o cliente ftp padrão Unix para a linha de comando. O
-ftp é o protocolo padrão de transferência de arquivos na Internet, e é
+Este pacote provê o cliente FTP padrão Unix para a linha de comando. O
+FTP é o protocolo padrão de transferência de arquivos na Internet, e é
 extremamente popular.
 
 %description -l ru
-ðÁËÅÔ ftp ÓÏÄÅÒÖÉÔ ÓÔÁÎÄÁÒÔÎÙÊ FTP-ËÌÉÅÎÔ Unix, ÒÁÂÏÔÁÀÝÉÊ ÉÚ
+ðÁËÅÔ FTP ÓÏÄÅÒÖÉÔ ÓÔÁÎÄÁÒÔÎÙÊ FTP-ËÌÉÅÎÔ Unix, ÒÁÂÏÔÁÀÝÉÊ ÉÚ
 ËÏÍÁÎÄÎÏÊ ÓÔÒÏËÉ. FTP - ÜÔÏ ÛÉÒÏËÏ ÉÓÐÏÌØÚÕÅÍÙÊ ÐÒÏÔÏËÏÌ ÄÌÑ ÐÅÒÅÄÁÞÉ
 ÆÁÊÌÏ× × éÎÔÅÒÎÅÔÅ É ÄÌÑ ÁÒÈÉ×ÉÒÏ×ÁÎÉÑ ÆÁÊÌÏ×.
 
 %description -l tr
-Bu pakette UN*X'in standart komut satýrý ftp istemcisi bulunmaktadýr.
+Bu pakette UN*X'in standart komut satýrý FTP istemcisi bulunmaktadýr.
 Gerçi grafik arabirimlerin egemen olduðu bir çaðda biraz demode gibi
 gözükebilir ancak anonim dosya arþivleri ve kiþiler arasý dosya
 iletimi için hala yaygýn olarak kullanýlmaktadýr.
 
 %description -l uk
-ðÁËÅÔ ftp Í¦ÓÔÉÔØ ÓÔÁÎÄÁÒÔÎÉÊ FTP-ËÌ¦¤ÎÔ Unix, ÑËÉÊ ÐÒÁÃÀ¤ Ú
+ðÁËÅÔ FTP Í¦ÓÔÉÔØ ÓÔÁÎÄÁÒÔÎÉÊ FTP-ËÌ¦¤ÎÔ Unix, ÑËÉÊ ÐÒÁÃÀ¤ Ú
 ËÏÍÁÎÄÎÏÇÏ ÒÑÄËÁ. FTP - ÃÅ ÛÉÒÏËÏ ×ÉËÏÒÉÓÔÏ×Õ×ÁÎÉÊ ÐÒÏÔÏËÏÌ ÄÌÑ
 ÐÅÒÅÄÁÞ¦ ÆÁÊÌ¦× × ¶ÎÔÅÒÎÅÔ¦ ÔÁ ÄÌÑ ÁÒÈ¦×ÁÃ¦§ ÆÁÊÌ¦×.
 
 %package pftp
 Summary:	Passive mode FTP client
-Summary(pl):	Tryb pasywny klienta ftp
+Summary(pl):	Tryb pasywny klienta FTP
 Group:		Applications/Networking
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	%{name} >= 0.17-13
