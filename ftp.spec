@@ -4,13 +4,14 @@ Summary(fr):	Client ftp (file transfer protocol) standard d'Unix
 Summary(pl):	Standardowy klient ftp (file transfer protocol)
 Summary(tr):	Standart UN*X ftp istemcisi
 Name:		ftp
-Version:	0.16
-Release:	7
+Version:	0.17
+Release:	1
 License:	BSD
 Group:		Applications/Networking
 Group(pl):	Aplikacje/Sieciowe
-Source0:	ftp://sunsite.unc.edu/pub/Linux/system/network/file-transfer/netkit-%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-%{name}-%{version}.tar.gz
 Source1:	ftp.1.pl
+Patch0:		netkit-ftp-macro-quit.patch
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	readline-devel >= 4.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -48,6 +49,7 @@ iletimi için hala yaygýn olarak kullanýlmaktadýr.
 
 %prep
 %setup -q -n netkit-ftp-%{version}
+%patch0 -p1
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" \
