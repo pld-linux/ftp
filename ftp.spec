@@ -104,7 +104,8 @@ pasywnym.
 
 %build
 CFLAGS="%{rpmcflags}" \
-./configure --with-c-compiler=%{__cc}
+./configure \
+	--with-c-compiler="%{__cc}"
 %{__make} LIBTERMCAP=-ltinfo CFLAGS="%{rpmcflags}"
 
 %install
