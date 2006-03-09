@@ -1,0 +1,3 @@
+- release 10
+- merge acct, usagi-ipv6 rawhide patches,
+- added using %{__cc} macro.
