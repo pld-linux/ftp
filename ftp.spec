@@ -9,7 +9,7 @@ Summary(tr):	Standart UN*X FTP istemcisi
 Summary(uk):	Стандартний FTP (file transfer protocol) кл╕╓нт Unix
 Name:		ftp
 Version:	0.17
-Release:	23
+Release:	24
 License:	BSD
 Group:		Applications/Networking
 Source0:	ftp://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-%{name}-%{version}.tar.gz
@@ -106,7 +106,7 @@ pasywnym.
 CFLAGS="%{rpmcflags}" \
 ./configure \
 	--with-c-compiler="%{__cc}"
-%{__make} LIBTERMCAP=-ltinfo CFLAGS="%{rpmcflags}"
+%{__make} LIBTERMCAP=-ltinfo CFLAGS="%{rpmcflags} -D__USE_READLINE__"
 
 %install
 rm -rf $RPM_BUILD_ROOT
