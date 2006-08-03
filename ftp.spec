@@ -106,7 +106,10 @@ pasywnym.
 CFLAGS="%{rpmcflags}" \
 ./configure \
 	--with-c-compiler="%{__cc}"
-%{__make} LIBTERMCAP=-ltinfo CFLAGS="%{rpmcflags} -D__USE_READLINE__"
+%{__make} \
+	LIBTERMCAP="-ltinfo" \
+	LDFLAGS="%{rpmldflags}" \
+	CFLAGS="%{rpmcflags} -D__USE_READLINE__"
 
 %install
 rm -rf $RPM_BUILD_ROOT
