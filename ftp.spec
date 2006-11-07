@@ -139,7 +139,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ja) %{_mandir}/ja/man1/ftp.1*
 %lang(pl) %{_mandir}/pl/man1/ftp.1*
 %lang(pt_BR) %{_mandir}/pt_BR/man1/ftp.1*
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
 
 %files pftp
