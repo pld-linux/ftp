@@ -1,12 +1,12 @@
 Summary:	The standard UNIX FTP (file transfer protocol) client
-Summary(de.UTF-8):   Standardmäßiger Unix-FTP-Client (file transfer protocol)
-Summary(es.UTF-8):   Cliente FTP padrón Unix (protocolo de transmisión de archivo)
-Summary(fr.UTF-8):   Client FTP (file transfer protocol) standard d'Unix
-Summary(pl.UTF-8):   Standardowy klient FTP (file transfer protocol)
-Summary(pt_BR.UTF-8):   Cliente FTP padrão Unix (protocolo de transmissão de arquivo)
-Summary(ru.UTF-8):   Стандартный FTP (file transfer protocol) клиент Unix
-Summary(tr.UTF-8):   Standart UN*X FTP istemcisi
-Summary(uk.UTF-8):   Стандартний FTP (file transfer protocol) клієнт Unix
+Summary(de.UTF-8):	Standardmäßiger Unix-FTP-Client (file transfer protocol)
+Summary(es.UTF-8):	Cliente FTP padrón Unix (protocolo de transmisión de archivo)
+Summary(fr.UTF-8):	Client FTP (file transfer protocol) standard d'Unix
+Summary(pl.UTF-8):	Standardowy klient FTP (file transfer protocol)
+Summary(pt_BR.UTF-8):	Cliente FTP padrão Unix (protocolo de transmissão de arquivo)
+Summary(ru.UTF-8):	Стандартный FTP (file transfer protocol) клиент Unix
+Summary(tr.UTF-8):	Standart UN*X FTP istemcisi
+Summary(uk.UTF-8):	Стандартний FTP (file transfer protocol) клієнт Unix
 Name:		ftp
 Version:	0.17
 Release:	24
@@ -81,7 +81,7 @@ iletimi için hala yaygın olarak kullanılmaktadır.
 
 %package pftp
 Summary:	Passive mode FTP client
-Summary(pl.UTF-8):   Tryb pasywny klienta FTP
+Summary(pl.UTF-8):	Tryb pasywny klienta FTP
 Group:		Applications/Networking
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	%{name} >= 0.17-13
