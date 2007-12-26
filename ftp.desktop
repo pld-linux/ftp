@@ -1,5 +1,4 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=ftp
 Comment=The standard UNIX FTP (file transfer protocol) client
 Comment[de]=Standardmäßiger Unix-ftp-Client (file transfer protocol)
@@ -11,7 +10,7 @@ Comment[ru]=Стандартный FTP (file transfer protocol) клиент Uni
 Comment[tr]=Standart UN*X ftp istemcisi
 Comment[uk]=Стандартний FTP (file transfer protocol) клієнт Unix                                                                   
 Exec=ftp
-Icon=ftp.png
+Icon=ftp
 Terminal=true
 Type=Application
 Categories=ConsoleOnly;Network;FileTransfer;
