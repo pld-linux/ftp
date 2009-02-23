@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	Standart UN*X FTP istemcisi
 Summary(uk.UTF-8):	Стандартний FTP (file transfer protocol) клієнт Unix
 Name:		ftp
 Version:	0.17
-Release:	25
+Release:	26
 License:	BSD
 Group:		Applications/Networking
 Source0:	ftp://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-%{name}-%{version}.tar.gz
