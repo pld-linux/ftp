@@ -84,7 +84,6 @@ iletimi için hala yaygın olarak kullanılmaktadır.
 Summary:	Passive mode FTP client
 Summary(pl.UTF-8):	Tryb pasywny klienta FTP
 Group:		Applications/Networking
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	%{name} >= 0.17-13
 Conflicts:	pftp
 
