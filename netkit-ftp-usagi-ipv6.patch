@@ -131,15 +131,6 @@ diff -uNr netkit-ftp-0.17/ftp/cmds.c netkit-ftp/ftp/cmds.c
  /*
   * Copyright (c) 1985, 1989 Regents of the University of California.
   * All rights reserved.
-@@ -35,7 +37,7 @@
-  * from: @(#)cmds.c	5.26 (Berkeley) 3/5/91
-  */
- char cmds_rcsid[] = 
--   "$Id$";
-+   "$Id$";
- 
- /*
-  * FTP User Program -- Command Routines.
 @@ -190,7 +192,7 @@
  setpeer(int argc, char *argv[])
  {
@@ -176,42 +167,6 @@ diff -uNr netkit-ftp-0.17/ftp/cmds.c netkit-ftp/ftp/cmds.c
  		/*
  		 * Set up defaults for FTP.
  		 */
-diff -uNr netkit-ftp-0.17/ftp/cmdtab.c netkit-ftp/ftp/cmdtab.c
---- netkit-ftp-0.17/ftp/cmdtab.c	Tue Sep 28 18:36:05 1999
-+++ netkit-ftp/ftp/cmdtab.c	Fri Nov  3 21:18:15 2000
-@@ -35,7 +35,7 @@
-  * from: @(#)cmdtab.c	5.10 (Berkeley) 6/1/90
-  */
- char cmdtab_rcsid[] = 
--  "$Id$";
-+  "$Id$";
- 
- #include <string.h>   /* for NULL */
- #include "ftp_var.h"
-diff -uNr netkit-ftp-0.17/ftp/domacro.c netkit-ftp/ftp/domacro.c
---- netkit-ftp-0.17/ftp/domacro.c	Thu Aug 15 02:27:28 1996
-+++ netkit-ftp/ftp/domacro.c	Fri Nov  3 21:18:15 2000
-@@ -35,7 +35,7 @@
-  * from: @(#)domacro.c	1.8 (Berkeley) 9/28/90
-  */
- char domacro_rcsid[] = 
--  "$Id$";
-+  "$Id$";
- 
- #include <errno.h>
- #include <ctype.h>
-diff -uNr netkit-ftp-0.17/ftp/ftp.1 netkit-ftp/ftp/ftp.1
---- netkit-ftp-0.17/ftp/ftp.1	Mon Jul 31 02:56:59 2000
-+++ netkit-ftp/ftp/ftp.1	Fri Nov  3 21:18:15 2000
-@@ -30,7 +30,7 @@
- .\" SUCH DAMAGE.
- .\"
- .\"	from: @(#)ftp.1	6.18 (Berkeley) 7/30/91
--.\"	$Id$
-+.\"	$Id$
- .\"
- .Dd August 15, 1999
- .Dt FTP 1
 diff -uNr netkit-ftp-0.17/ftp/ftp.c netkit-ftp/ftp/ftp.c
 --- netkit-ftp-0.17/ftp/ftp.c	Mon Dec 13 22:33:20 1999
 +++ netkit-ftp/ftp/ftp.c	Sun Feb 11 14:26:59 2001
@@ -250,15 +205,6 @@ diff -uNr netkit-ftp-0.17/ftp/ftp.c netkit-ftp/ftp/ftp.c
  /*
   * Copyright (c) 1985, 1989 Regents of the University of California.
   * All rights reserved.
-@@ -35,7 +66,7 @@
-  * From: @(#)ftp.c	5.38 (Berkeley) 4/22/91
-  */
- char ftp_rcsid[] = 
--  "$Id$";
-+  "$Id$";
- 
- #include <sys/param.h>
- #include <sys/stat.h>
 @@ -63,14 +94,38 @@
  #include "ftp_var.h"
  #include "cmds.h"
@@ -896,15 +842,6 @@ diff -uNr netkit-ftp-0.17/ftp/ftp_var.h netkit-ftp/ftp/ftp_var.h
  /*
   * Copyright (c) 1985, 1989 Regents of the University of California.
   * All rights reserved.
-@@ -31,7 +33,7 @@
-  * SUCH DAMAGE.
-  *
-  *	from: @(#)ftp_var.h	5.9 (Berkeley) 6/1/90
-- *	$Id$
-+ *	$Id$
-  */
- 
- /*
 @@ -112,6 +114,8 @@
  Extern int	mflag;		/* flag: if != 0, then active multi command */
  
