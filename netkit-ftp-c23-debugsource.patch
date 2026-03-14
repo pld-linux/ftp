@@ -1,0 +1,25 @@
+--- netkit-ftp-0.17/ftp/Makefile.orig	2001-01-27 07:57:08.000000000 +0100
++++ netkit-ftp-0.17/ftp/Makefile	2026-03-14 13:29:00.000000000 +0100
+@@ -17,7 +17,7 @@
+ 
+ install: ftp
+ 	install -d $(INSTALLROOT)$(BINDIR)
+-	install -s -m$(BINMODE) ftp $(INSTALLROOT)$(BINDIR)
++	install -m$(BINMODE) ftp $(INSTALLROOT)$(BINDIR)
+ 	ln -sf ftp $(INSTALLROOT)$(BINDIR)/pftp
+ 	install -d $(INSTALLROOT)$(MANDIR)/man1
+ 	install -m$(MANMODE) ftp.1 $(INSTALLROOT)$(MANDIR)/man1
+--- netkit-ftp-0.17/ftp/cmds.c.orig	2001-01-13 12:09:44.000000000 +0100
++++ netkit-ftp-0.17/ftp/cmds.c	2026-03-14 13:29:00.000000000 +0100
+@@ -1045,9 +1045,9 @@
+ }
+ 
+ static const char *
+-onoff(int bool)
++onoff(int enabled)
+ {
+-	return (bool ? "on" : "off");
++	return (enabled ? "on" : "off");
+ }
+ 
+ /*

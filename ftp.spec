@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	Standart UN*X FTP istemcisi
 Summary(uk.UTF-8):	Стандартний FTP (file transfer protocol) клієнт Unix
 Name:		ftp
 Version:	0.17
-Release:	31
+Release:	32
 License:	BSD
 Group:		Applications/Networking
 Source0:	ftp://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-%{name}-%{version}.tar.gz
@@ -23,6 +23,7 @@ Patch1:		netkit-%{name}-acct.patch
 Patch2:		netkit-%{name}-usagi-ipv6.patch
 Patch3:		netkit-%{name}-input_line.patch
 Patch4:		netkit-%{name}-arg_max.patch
+Patch5:		netkit-%{name}-c23-debugsource.patch
 BuildRequires:	readline-devel >= 4.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	inetutils-ftp
@@ -102,6 +103,7 @@ pasywnym.
 %patch -P2 -p1
 %patch -P3 -p1
 %patch -P4 -p1
+%patch -P5 -p1
 
 %build
 CFLAGS="%{rpmcflags}" \
